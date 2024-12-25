@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 100vh; 
+    background-image: url('fon.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero .content {
+    background-color: rgba(245, 222, 179, 0.8); /* Бежевый цвет с полупрозрачностью */
+    padding: 30px;
+    border-radius: 15px; /* Скругляем углы */
+    text-align: center;
+    color: #333; /* Цвет текста */
+    max-width: 500px;
+    width: 100%;
+    position: absolute; /* Устанавливаем позицию элемента относительно родительского блока */
+    left: 70px; /* Сдвигаем на 70 пикселей влево */
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero span {
+    color: #ff8c00; /* Цвет для выделения */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.hero .btn {
+    padding: 12px 25px;
+    background-color: #ff8c00;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #fbb26a;
+}
+
+.contact {
+    background-color: #f4f4f4;
+    padding: 2em;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.contact p {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+
+/* Стили для секции "Мои достижения" */
+#achievements {
+    background-color: #ff8c00; 
+    padding: 4em 2em; /* Отступы вокруг секции */
+    text-align: center;
+    color: white; 
+}
+
+#achievements h2 {
+    font-size: 2.5em;
+    margin-bottom: 2em;
+    color: #333;
+}
+
+/* Контейнер для карточек */
+.achievements-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку */
+    gap: 2em; /* Отступы между карточками */
+    max-width: 1400px;
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+/* Стили для карточек */
+.achievement-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Изображение и текст вертикально */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Убираем лишние части изображения */
+    width: 30%; /* Каждая карточка занимает 30% ширины контейнера */
+    min-width: 250px; /* Минимальная ширина карточки */
+    padding: 1em;
+}
+
+.achievement-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1em; /* Отступ между изображением и текстом */
+    border-radius: 10px;
+}
+
+.achievement-content {
+    text-align: center;
+}
+
+.achievement-content h3 {
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+    color: #ff8c00; 
+}
+
+.achievement-content p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+    .achievements-container {
+        flex-direction: column; /* На мобильных устройствах карточки выстраиваются в колонку */
+        align-items: center; /* Центрируем карточки по горизонтали */
+    }
+
+    .achievement-card {
+        width: 99%; /* На мобильных устройствах карточки занимают 80% ширины */
+    }
+
+    #achievements h2 {
+        font-size: 2em;
+    }
+}
+
+
+/* Стили для секции "Технологии, которыми я владею" */
+#technologies {
+    background-color: #f4f4f4; /* Светлый фон для контраста с предыдущей секцией */
+    padding: 4em 2em; /* Отступы вокруг секции */
+    text-align: center;
+    color: #333; /* Темный текст для лучшей читаемости */
+}
+
+#technologies h2 {
+    font-size: 2.5em;
+    margin-bottom: 2em;
+    color: #ff8c00; /* Цвет заголовка */
+}
+
+/* Контейнер для карточек */
+.technologies-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд на больших экранах */
+    gap: 2em; /* Отступы между карточками */
+    max-width: 1400px;
+    margin: 0 auto; /* Центрируем контейнер */
+    justify-items: center; /* Центрируем карточки по горизонтали */
+    align-items: stretch; /* Растягиваем карточки по вертикали */
+}
+
+/* Стили для карточек */
+.technology-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Изображение и текст вертикально */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Убираем лишние части изображения */
+    width: 100%; /* Каждая карточка будет занимать 100% ширины контейнера */
+    min-height: 350px; /* Минимальная высота карточки */
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Равномерное распределение контента */
+}
+
+/* Изображение в карточке */
+.technology-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1em; /* Отступ между изображением и текстом */
+    border-radius: 10px;
+}
+
+/* Текст внутри карточки */
+.technology-content {
+    text-align: center;
+    flex-grow: 1; /* Позволяет карточке заполнять доступное пространство */
+}
+
+.technology-content h3 {
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+    color: #ff8c00; /* Цвет заголовка */
+}
+
+.technology-content p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Медиазапрос для экранов шириной до 1200px (например, планшеты) */
+@media (max-width: 1200px) {
+    .technologies-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд на экранах средней ширины */
+    }
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    .technologies-container {
+        grid-template-columns: 1fr; /* 1 карточка в строке на мобильных устройствах */
+        justify-items: center; /* Центрируем карточки по горизонтали */
+    }
+
+    #technologies h2 {
+        font-size: 2em;
+    }
+}
+
+
+
+
+/* Общие стили для меню */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #333;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.nav-links a:hover {
+    color: #ff8c00;
+}
+
+/* Стили для бургер-меню */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+
+/* форма обратной связи */
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.contact-form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #ff8c00;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #fbb26a;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff8c00;
+    outline: none;
+}
+
+/* Измененные стили для секций Контакты и Обратная связь */
+.contact, .feedback {
+    background-color: #ff8c00;
+    padding: 2em;
+    text-align: center;
+    color: #333; /* Цвет текста */
+    }
+    
+    .contact h2, .feedback h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    }
+    
+    .contact p, .feedback p {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    }
+    
+    /* Новая секция в меню */
+    .nav-links li a[href="#feedback"] {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    }
+    
+    .nav-links li a[href="#feedback"]:hover {
+    color: #ff8c00;
+    }
